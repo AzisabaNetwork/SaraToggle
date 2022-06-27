@@ -1,0 +1,2 @@
+# set to true only if the server has ranks like rank1 and rank2
+use-rank: false
