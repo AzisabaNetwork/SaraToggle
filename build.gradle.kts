@@ -1,9 +1,9 @@
 plugins {
-    id("java")
+    java
 }
 
 group = "net.azisaba"
-version = "1.0.0-SNAPSHOT"
+version = "2.0.0"
 
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(8))
@@ -18,5 +18,5 @@ repositories {
 
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT")
-    compileOnly("com.github.AzisabaNetwork.AziPluginMessaging:api:90d6bf73d3")
+    compileOnly("com.github.AzisabaNetwork.AziPluginMessaging:api:4.0.0")
 }
