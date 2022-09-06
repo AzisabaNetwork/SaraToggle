@@ -6,7 +6,6 @@ import net.azisaba.azipluginmessaging.api.protocol.Protocol;
 import net.azisaba.azipluginmessaging.api.protocol.message.PlayerWithServerMessage;
 import net.azisaba.azipluginmessaging.api.protocol.message.ProxyboundToggleSaraHideMessage;
 import net.azisaba.azipluginmessaging.api.protocol.message.ProxyboundToggleSaraShowMessage;
-import net.azisaba.azipluginmessaging.api.util.ArrayUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -29,7 +28,7 @@ public class SaraToggle extends JavaPlugin {
             return true;
         });
         Objects.requireNonNull(Bukkit.getPluginCommand("sara")).setExecutor((sender, command, label, args) -> {
-            Set<Long> groups = Arrays.stream(ArrayUtil.dropFirst(args)).map(Long::parseLong).collect(Collectors.toSet());
+            Set<Long> groups = Arrays.stream(args).map(Long::parseLong).collect(Collectors.toSet());
             AziPluginMessaging api = AziPluginMessagingProvider.get();
             if (getConfig().getBoolean("use-rank", false)) {
                 Protocol.P_TOGGLE_SARA_SHOW.sendPacket(
